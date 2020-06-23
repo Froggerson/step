@@ -4,15 +4,63 @@
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body style = "margin:0">
     <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
+      <div id="navbar">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div id ="banner">
+        <h1>Hi! I'm Jennifer,</h1>
+        <h2>A student studying computer science.</h2>
+      </div>
+      <div id="about">
+          <h2><span class="highlight">About me</span></h2>
+            <div id="about-container">
+                <div id="about-text">
+                    <p>Hey! I'm an upcoming second year computer science major at UC San Diego. In the future I 
+               hope to do something related to front-end development, but there is still a ton of things that I haven't yet in
+               computer science, and I am willing to try them all!</p>
+                    <p>In my freetime, I enjoy drawing, playing video games, and watching shows with my older sister. I'm always down to get boba with my friends. I don't have a
+                        ton of photos of myself, but I do like cats, hence the cat photo from Google Images.
+                    </p>
+                </div>
+                <img src="/images/relaxed_cat.jpg" alt="cat photo"/>
+            </div>
+      </div>
+      <div id='projects'>
+          <h2><span class="highlight">Projects</span></h2>
+          <div id="project-container">
+            <div class="project-card">
+                <h3>Warren College Writing Program Website</h3>
+                <p>I made a website detailing the suborgs available at UCSD that are dedicated to fighting climate change. This was done for my final project for the class.</p>
+            </div>
+          <div class="project-card">
+            <h3>UCSD Bot</h3>
+            <p>During a summer program at UCSD, my lab partner and I created a reddit bot that would search for certain key terms in a comment and post
+              a fun fact about that key term. It was done for our final project in the program.
+            </p>
+          </div>
+            <div class="project-card">
+            <h3>More coming soon!</h3>
+            <p>There are still plently more projects to be created. Hang tight until then!</p>
+          </div>
+        </div>
+      </div>
+      <div id="contact-cotainer">
+        <div id="contact">
+          <h2><span class="highlight" target="_blank">Contacts</span></h2>
+          <h3>Github: <a href="https://github.com/Froggerson" target="_blank">https://github.com/Froggerson</a></h3>
+          <h3>Email: <a href="phamjennifer314@gmail.com">phamjennifer314@gmail.com</a></h3>
+          <h3>Linkedin: <a href="https://www.linkedin.com/in/jennifer-pham-575ab113b" target="_blank" >https://www.linkedin.com/in/jennifer-pham-575ab113b</a></h3>
+        </div>
+      </div>
     </div>
   </body>
 </html>

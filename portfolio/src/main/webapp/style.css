@@ -1,9 +1,124 @@
+/* Color Pallet
+e0fbfc
+c2dfe3
+9db4c0
+5c6b73
+253237
+*/
 #content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
-
+h2{
+    font-family: 'Nunito', sans-serif;
+    color:#555b6e;
+    font-size:40px;
+}
 #greeting-container {
   margin-top: 20px;
+}
+
+/* Nav bar */
+#navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+#navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+#navbar li {
+  float: right;
+}
+
+#navbar li a {
+  display: block;
+  color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+#navbar li a:hover {
+  background-color: #ffd6ba;
+}
+/* Banner */
+#banner{
+    background-color:#bee3db;
+    height: 70vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    font-family: 'Nunito', sans-serif;
+}
+#banner h1{
+    margin:0;
+    font-size: 64px;
+    color: #555b6e;
+    text-align: center;
+}
+#banner h2{
+    color: #89b0ae;
+    text-align:center;
+}
+#about{
+    margin:auto;
+    width:70vw;
+}
+#about-text{
+    padding:25px;
+}
+
+#about-container{
+    display:flex;
+    justify-content:space-between;
+}
+#project-container{
+    display:flex;
+    justify-content: space-between;
+}
+#projects{
+    width:70vw;
+    margin: auto;
+}
+.project-card{
+    margin:auto;
+    width:250px;
+    box-shadow:5px 10px 5px #c7c7c7;
+    border: 5px solid #bee3db;
+    padding: 20px;
+    border-radius: 10px;
+    height:300px;
+}
+.project-card h3{ 
+    font-family: 'Nunito', sans-serif;
+    color:#89b0ae;
+}
+#contact-container{
+    width: 100%;
+    margin:auto;
+    background-color:#bee3db;
+}
+#contact{
+    width:70vw;
+    margin:auto;
+}
+#contact h3{
+    color:#555b6e;
+    font-size: 20px;
+    padding:10px 20px;
+}
+.highlight{
+    background-color:#ffd6ba;
+    padding:0px 5px;
+}
+img{
+    width:400px;
+    display:block;
 }
