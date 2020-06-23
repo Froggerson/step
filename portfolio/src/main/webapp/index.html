@@ -4,15 +4,51 @@
     <meta charset="UTF-8">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body style = "margin:0">
     <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
+      <div id="navbar">
+        <ul>
+          <li><a href="#content">About</a></li>
+          <li><a href="#content">Projects</a></li>
+          <li><a href="#content">Contact</a></li>
+        </ul>
+      </div>
+      <div id ="banner">
+        <h1>Hi! I'm Jennifer.</h1>
+        <h2>A student studying computer science</h2>
+      </div>
+      <div id="about">
+          <h2>About me</h2>
+           <p>Hey! I'm an upcoming second year computer science major at UC San Diego. In the future I 
+               hope to do something related to front-end development.
+           </p>
+           <p>In my freetime, I enjoy drawing, playing video games, and watching shows with my older sister.</p>
+      </div>
+      <div id='projects'>
+          <h2>Projects</h2>
+          <div class="project-card">
+          <h3>Warren College Writing Program</h3>
+          <p>I made a website detailing the suborgs available at UCSD that are dedicated to fighting climate change.</p>
+            <a href="" target="_blank">See More</a>
+          </div>
+          <div class="project-card">
+          <h3>UCSD Bot</h3>
+          <p>During a summer program at UCSD, my lab partner and I created a reddit bot that would search for certain key terms in a comment and post
+              a fun fact about that key term.
+          </p>
+          </div>
+      </div>
+      <p>I don't have any photos of myself, so here are some cat photos from the internet!</p>
       <p>Click here to get a random message:</p>
       <button onclick="addRandomGreeting()">Hello</button>
       <div id="greeting-container"></div>
+      <footer>
+        <p>github:</p>
+        <p>email:</p>
+      </footer>
     </div>
   </body>
 </html>
