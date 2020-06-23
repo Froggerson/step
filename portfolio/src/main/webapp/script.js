@@ -13,16 +13,19 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * Adds a random cat to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['I like dogs.', 'I like cats.', 'Pokemon is cool.', 'Do you like to code?'];
+function addCat() {
+  const cats =
+      ['/images/bongo_cat.gif', '/images/cat_nerd.jpeg', '/images/cat_phone.gif','/images/cat_stare.jpg','/images/cool_cat.jpg','/images/crying_cat.jpg','/images/disgust_cat.jpeg','/images/polite_cat.jpg','/images/relaxed_cat.jpg','/images/shark_cat.jpeg','/images/swag_cat.jpg'];
 
   // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  const cat = cats[Math.floor(Math.random() * cats.length)];
 
   // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  const catPic = document.getElementById('cat-pic');
+  catPic.src = cat;
+  console.log("Button Pressed!");
+  console.log(cat);
+  console.log(catPic.src);
 }
