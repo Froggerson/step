@@ -9,7 +9,11 @@ c2dfe3
   width: 100%;
   font-family: 'Montserrat', sans-serif;
 }
-
+h2{
+    font-family: 'Nunito', sans-serif;
+    color:#555b6e;
+    font-size:40px;
+}
 #greeting-container {
   margin-top: 20px;
 }
@@ -67,27 +71,54 @@ c2dfe3
     margin:auto;
     width:70vw;
 }
-#about h2{
-    text-align: left;
-    font-family: 'Nunito', sans-serif;
-    color:#555b6e;
-    font-size:40px;
+#about-text{
+    padding:25px;
+}
+
+#about-container{
+    display:flex;
+    justify-content:space-between;
+}
+#project-container{
+    display:flex;
+    justify-content: space-between;
 }
 #projects{
     width:70vw;
     margin: auto;
 }
-#projects h2{
-    font-family: 'Nunito', sans-serif;
-    color:#555b6e;
-    font-size:40px;
-}
 .project-card{
     margin:auto;
-    width:100px;
+    width:250px;
     box-shadow:5px 10px 5px #c7c7c7;
+    border: 5px solid #bee3db;
+    padding: 20px;
+    border-radius: 10px;
+    height:300px;
 }
 .project-card h3{ 
     font-family: 'Nunito', sans-serif;
     color:#89b0ae;
+}
+#contact-container{
+    width: 100%;
+    margin:auto;
+    background-color:#bee3db;
+}
+#contact{
+    width:70vw;
+    margin:auto;
+}
+#contact h3{
+    color:#555b6e;
+    font-size: 20px;
+    padding:10px 20px;
+}
+.highlight{
+    background-color:#ffd6ba;
+    padding:0px 5px;
+}
+img{
+    width:400px;
+    display:block;
 }
