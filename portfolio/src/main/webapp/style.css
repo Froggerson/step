@@ -111,14 +111,20 @@ h2{
     font-size: 20px;
     padding:10px 20px;
 }
+#contact a{
+    color:#89b0ae;
+}
 .highlight{
     background-color:#ffd6ba;
     padding:0px 5px;
 }
 #cat-pic{
-    width:400px;
+    width:500px;
+    height:500px;
     display:block;
     min-width: 500px;
+    object-fit: cover;
+    max-height:500px;
 }
 #cat-button{
     margin:auto;
@@ -129,7 +135,8 @@ h2{
     padding: 20px;
     text-align: center;
     display: block;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
     border-radius: 7px;
+    font-weight:bold;
 }
