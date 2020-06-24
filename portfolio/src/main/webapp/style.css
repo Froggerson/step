@@ -8,7 +8,14 @@ c2dfe3
 #content {
   width: 100%;
   font-family: 'Montserrat', sans-serif;
+  font-size:18px;
 }
+h2{
+    font-family: 'Nunito', sans-serif;
+    color:#555b6e;
+    font-size:40px;
+}
+
 h2{
     font-family: 'Nunito', sans-serif;
     color:#555b6e;
@@ -100,24 +107,44 @@ h2{
     font-family: 'Nunito', sans-serif;
     color:#89b0ae;
 }
-#contact-container{
-    width: 100%;
-    margin:auto;
-    background-color:#bee3db;
-}
 #contact{
     width:70vw;
     margin:auto;
+    padding-top:20px;
 }
 #contact h3{
     color:#555b6e;
     font-size: 20px;
     padding:10px 20px;
 }
+#contact a{
+    color:#89b0ae;
+}
 .highlight{
     background-color:#ffd6ba;
     padding:0px 5px;
 }
+#cat-pic{
+    width:500px;
+    height:500px;
+    display:block;
+    min-width: 500px;
+    object-fit: cover;
+    max-height:500px;
+}
+#cat-button{
+    margin:auto;
+    background-color: #ffd6ba;
+    border: none;
+    color: #555b6e;
+    font-family:"Nunito", sans-serif;
+    padding: 20px;
+    text-align: center;
+    display: block;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 7px;
+    font-weight:bold;
 img{
     width:400px;
     display:block;
