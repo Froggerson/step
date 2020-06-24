@@ -101,7 +101,7 @@ h2{
     border: 5px solid #bee3db;
     padding: 20px;
     border-radius: 10px;
-    height:300px;
+    height:350px;
 }
 .project-card h3{ 
     font-family: 'Nunito', sans-serif;
@@ -145,6 +145,7 @@ h2{
     cursor: pointer;
     border-radius: 7px;
     font-weight:bold;
+}
 img{
     width:400px;
     display:block;
