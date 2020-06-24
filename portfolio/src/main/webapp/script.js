@@ -17,7 +17,7 @@
  */
 function addCat() {
   const cats =
-      ['/images/bongo_cat.gif', '/images/cat_nerd.jpeg', '/images/cat_phone.gif','/images/cat_stare.jpg','/images/cool_cat.jpg','/images/crying_cat.jpg','/images/disgust_cat.jpeg','/images/polite_cat.jpg','/images/relaxed_cat.jpg','/images/shark_cat.jpeg','/images/swag_cat.jpg'];
+      ['/images/bowl_cat.gif','/images/fidget_cat.gif','/images/fluffy_cat.gif','/images/nail_cat.gif','/images/paw_cat.gif','/images/scarf_cat.jpeg','/images/vacuum_cat.gif','/images/turtle_cat.jpeg','/images/bongo_cat.gif', '/images/cat_nerd.jpeg', '/images/cat_phone.gif','/images/cat_stare.jpg','/images/cool_cat.jpg','/images/crying_cat.jpg','/images/disgust_cat.jpeg','/images/polite_cat.jpg','/images/relaxed_cat.jpg','/images/shark_cat.jpeg','/images/swag_cat.jpg'];
 
   // Pick a random greeting.
   const cat = cats[Math.floor(Math.random() * cats.length)];
@@ -25,7 +25,4 @@ function addCat() {
   // Add it to the page.
   const catPic = document.getElementById('cat-pic');
   catPic.src = cat;
-  console.log("Button Pressed!");
-  console.log(cat);
-  console.log(catPic.src);
 }
