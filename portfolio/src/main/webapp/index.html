@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="script.js"></script>
   </head>
-  <body style = "margin:0">
+  <body style = "margin:0" onload="getGreeting()">
     <div id="content">
       <div id="navbar">
         <ul>
@@ -20,7 +20,7 @@
         </ul>
       </div>
       <div id ="banner">
-        <h1>Hi! I'm Jennifer,</h1>
+        <h1 id="greeting-container"> </h1>
         <h2>A student studying computer science.</h2>
       </div>
       <div id="about">

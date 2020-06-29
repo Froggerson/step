@@ -26,3 +26,8 @@ function addCat() {
   const catPic = document.getElementById('cat-pic');
   catPic.src = cat;
 }
+function getGreeting(){
+    fetch('/data').then(response => response.text()).then(greet => {
+    document.getElementById('greeting-container').innerText = greet;
+    });
+}
