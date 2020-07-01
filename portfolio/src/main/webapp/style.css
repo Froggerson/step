@@ -168,3 +168,9 @@ button {
   margin: auto;
   width: 70vw;
 }
+#comments-container {
+  margin: auto;
+  width: 70vw;
+  background-color: #bee3db;
+  padding: 5vh;
+}

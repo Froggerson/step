@@ -45,10 +45,34 @@ function addCat() {
   const catPic = document.getElementById("cat-pic");
   catPic.src = cat;
 }
-function getGreeting(){
-    fetch('/data').then(response => response.json()).then(greet => {
-    document.getElementById('greeting-container').innerText = greet[0];
-    });
 
-    
+function createCommentElement(comment) {
+  console.log("finding comment....");
+  const commentElement = document.createElement("div");
+  commentElement.className = "comment";
+
+  const titleElement = document.createElement("h1");
+  titleElement.innerText = comment[2];
+  const usernameElement = document.createElement("p");
+  usernameElement.innerText = comment[1];
+  const messageElement = document.createElement("p");
+  messageElement.innerText = comment[3];
+
+  commentElement.appendChild(titleElement);
+  commentElement.appendChild(usernameElement);
+  commentElement.appendChild(messageElement);
+  return commentElement;
+}
+
+function loadComments() {
+  console.log("Loading comments now!");
+  fetch("/data")
+    .then((response) => response.json())
+    .then((comments) => {
+      const commentElement = document.getElementById("comments-container");
+      comments.forEach((comment) => {
+        commentElement.appendChild(createCommentElement(comment));
+        console.log("Comment successfully inserted!");
+      });
+    });
 }
