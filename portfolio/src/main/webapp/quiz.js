@@ -1,4 +1,5 @@
-function makeQuiz() {
+function makeQuiz(quizContainer, questions) {
+  let output = [];
   questions.forEach((currentQuestion, questionNumber) => {
     output.push(
       `<input type="checkbox" id="question${questionNumber}" name="question${questionNumber}" 
@@ -34,13 +35,13 @@ function showResults() {
     document.getElementById("score-comment").textContent =
       "Meow. You are a cat.";
   }
-  window.scrollBy(000, 300);
+  const resultsDiv = document.getElementById("results");
+  resultsDiv.scrollIntoView();
 }
 
 const quizContainer = document.getElementById("quiz");
 const resultsContainer = document.getElementById("results");
 const submitButton = document.getElementById("submit");
-const output = [];
 const questions = [
   "I am quadrupedal.",
   "I have around 230-250 bones",
@@ -58,5 +59,5 @@ const questions = [
   "My heart beats from around 110 to 140 beats a minute.",
 ];
 
-makeQuiz();
+makeQuiz(quizContainer, questions);
 submitButton.addEventListener("click", showResults);

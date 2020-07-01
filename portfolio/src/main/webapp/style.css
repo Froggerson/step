@@ -8,22 +8,21 @@ c2dfe3
 #content {
   width: 100%;
 }
-html{
-  font-family: 'Montserrat', sans-serif;
-  font-size:18px;
+html {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
 }
-h2{
-    font-family: 'Nunito', sans-serif;
-    color:#555b6e;
-    font-size:40px;
+h2 {
+  font-family: "Nunito", sans-serif;
+  color: #555b6e;
+  font-size: 40px;
 }
-
 
 /* Nav bar */
-#navbar{
-    position: fixed;
-    top: 0;
-    width: 100%;
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 #navbar ul {
   list-style-type: none;
@@ -50,121 +49,122 @@ h2{
   background-color: #ffd6ba;
 }
 /* Banner */
-#banner{
-    background-color:#bee3db;
-    height: 70vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    font-family: 'Nunito', sans-serif;
+#banner {
+  background-color: #bee3db;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Nunito", sans-serif;
 }
-#banner h1{
-    margin:0;
-    font-size: 64px;
-    color: #555b6e;
-    text-align: center;
+#banner h1 {
+  margin: 0;
+  font-size: 64px;
+  color: #555b6e;
+  text-align: center;
 }
-#banner h2{
-    color: #89b0ae;
-    text-align:center;
+#banner h2 {
+  color: #89b0ae;
+  text-align: center;
 }
-#about{
-    margin:auto;
-    width:70vw;
+#about {
+  margin: auto;
+  width: 70vw;
 }
-#about-text{
-    padding:25px;
+#about-text {
+  padding: 25px;
 }
 
-#about-container{
-    display:flex;
-    justify-content:space-between;
+#about-container {
+  display: flex;
+  justify-content: space-between;
 }
-#project-container{
-    display:flex;
-    justify-content: space-between;
+#project-container {
+  display: flex;
+  justify-content: space-between;
 }
-#projects{
-    width:70vw;
-    margin: auto;
-    padding-bottom:3vh;
+#projects {
+  width: 70vw;
+  margin: auto;
+  padding-bottom: 3vh;
 }
-.project-card{
-    margin:auto;
-    width:250px;
-    box-shadow:5px 10px 5px #c7c7c7;
-    border: 5px solid #bee3db;
-    padding: 20px;
-    border-radius: 10px;
-    height:350px;
+.project-card {
+  margin: auto;
+  width: 250px;
+  box-shadow: 5px 10px 5px #c7c7c7;
+  border: 5px solid #bee3db;
+  padding: 20px;
+  border-radius: 10px;
+  height: 350px;
 }
-.project-card h3{ 
-    font-family: 'Nunito', sans-serif;
-    color:#89b0ae;
+.project-card h3 {
+  font-family: "Nunito", sans-serif;
+  color: #89b0ae;
 }
-#contact{
-    width:70vw;
-    margin:auto;
-    padding-top:20px;
+#contact {
+  width: 70vw;
+  margin: auto;
+  padding-top: 20px;
 }
-#contact h3{
-    color:#fff;
-    font-size: 20px;
-    font-family:"Nunito", sans-serif;
-    margin:10px;
+#contact h3 {
+  color: #fff;
+  font-size: 20px;
+  font-family: "Nunito", sans-serif;
+  margin: 10px;
 }
-#contact a{
-    color:#fff;
-    display:inline-block;
-    margin:1vh;
+#contact a {
+  color: #fff;
+  display: inline-block;
+  margin: 1vh;
 }
-.highlight{
-    background-color:#ffd6ba;
-    padding:0px 5px;
+.highlight {
+  background-color: #ffd6ba;
+  padding: 0px 5px;
 }
-#cat-pic{
-    width:500px;
-    height:500px;
-    display:block;
-    min-width: 500px;
-    object-fit: cover;
-    max-height:500px;
+#cat-pic {
+  width: 500px;
+  height: 500px;
+  display: block;
+  min-width: 500px;
+  object-fit: cover;
+  max-height: 500px;
 }
-button{
-    margin:auto;
-    background-color: #ffd6ba;
-    border: none;
-    color: #555b6e;
-    font-family:"Nunito", sans-serif;
-    padding: 20px;
-    text-align: center;
-    display: block;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 7px;
-    font-weight:bold;
+button {
+  margin: auto;
+  background-color: #ffd6ba;
+  border: none;
+  color: #555b6e;
+  font-family: "Nunito", sans-serif;
+  padding: 20px;
+  text-align: center;
+  display: block;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 7px;
+  font-weight: bold;
 }
-#contact-container{
-    background-color: #555b6e;
-    color:#555b6e;
-    margin-top:2vh;
+#contact-container {
+  background-color: #555b6e;
+  color: #555b6e;
+  margin-top: 2vh;
 }
-.material-icons.md-32 { 
-    font-size: 32px; 
-    }
-#cat-quiz{
-    margin:auto;
-    width:70vw;
-    padding:4vh 0;
+.material-icons.md-32 {
+  font-size: 32px;
 }
-#submit{
-    margin:2vh;
+#cat-quiz {
+  margin: auto;
+  width: 70vw;
+  padding: 4vh 0;
 }
-#quiz-results{
-    background-color:#bee3db;
-    width:100%;
-    padding:4vh 0;
+#submit {
+  margin: 2vh;
 }
-#results{
-    margin:auto;
-    width:70vw;
+#quiz-results {
+  background-color: #bee3db;
+  width: 100%;
+  padding: 4vh 0;
+}
+#results {
+  margin: auto;
+  width: 70vw;
+}
