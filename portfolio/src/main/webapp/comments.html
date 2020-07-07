@@ -35,9 +35,14 @@
           </form>
     </div>
     </br>
-     <div id="comments-container"  >
-     </div>
+    <div id="comments-container" >
+    </div>
+    <p> Please select how many comments to display:</p>
+    <input type="number" id="max-comments" name="max-comments" min="5" max="15" value="7" >
+    <button onCLick="loadComments()">Confirm</button>
+    <button onCLick="deleteComments()">Delete all Comments</button>
     </div>
     <script src="script.js"></script>
+    
   </body>
 </html>

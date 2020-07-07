@@ -47,7 +47,6 @@ function addCat() {
 }
 
 function createCommentElement(comment) {
-  console.log("finding comment....");
   const commentElement = document.createElement("div");
   commentElement.className = "comment";
 
@@ -65,14 +64,44 @@ function createCommentElement(comment) {
 }
 
 function loadComments() {
-  console.log("Loading comments now!");
+  const commentElement = document.getElementById("comments-container");
+  let maxComments = document.getElementById("max-comments");
+  let maxCommentAmount = 7;
+  console.log(maxComments);
+  if (maxComments) {
+    maxCommentAmount = maxComments.value;
+  }
+  console.log(maxCommentAmount);
+  let count = 0;
+  commentElement.innerHTML = "";
   fetch("/data")
     .then((response) => response.json())
     .then((comments) => {
-      const commentElement = document.getElementById("comments-container");
       comments.forEach((comment) => {
-        commentElement.appendChild(createCommentElement(comment));
-        console.log("Comment successfully inserted!");
+        if (maxCommentAmount > count) {
+          commentElement.appendChild(createCommentElement(comment));
+          count++;
+        }
       });
     });
+}
+async function postData(url = "", data = {}) {
+  // Default options are marked with *
+  const response = await fetch(url, {
+    method: "POST", // *GET, POST, PUT, DELETE, etc.
+    headers: {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: JSON.stringify(data), // body data type must match "Content-Type" header
+  });
+  return response.text(); // parses JSON response into native JavaScript objects
+}
+
+function deleteComments() {
+  postData("/delete-data", {}).then((comments) => {
+    const commentElement = document.getElementById("comments-container");
+    commentElement.innerHTML = "";
+  });
+  console.log("Data fetching tried lol");
 }
