@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="script.js"></script>
   </head>
-  <body style = "margin:0" onload="getGreeting()">
+  <body style = "margin:0" onload="loadComments()">
     <div id="content">
       <div id="navbar">
         <ul>
@@ -23,7 +23,7 @@
       <h1>Comments</h1>
       <p>Have something to say? Then please add a comment!</p>
       <div id="comment-form">
-          <form action="/data">
+          <form action="/data" method="POST">
              <label for="username">Name:</label><br>
              <input type="text" id="username" name="username"><br>
              <label for="title">Title:</label><br>
@@ -33,7 +33,16 @@
               </textarea>
              <input type="submit" value="Submit">
           </form>
-        </div>
     </div>
+    </br>
+    <div id="comments-container" >
+    </div>
+    <p> Please select how many comments to display:</p>
+    <input type="number" id="max-comments" name="max-comments" min="5" max="15" value="7" >
+    <button onCLick="loadComments()">Confirm</button>
+    <button onCLick="deleteComments()">Delete all Comments</button>
+    </div>
+    <script src="script.js"></script>
+    
   </body>
 </html>
