@@ -38,15 +38,17 @@ function addCat() {
     "/images/swag_cat.jpg",
   ];
 
-  // Pick a random greeting.
   const cat = cats[Math.floor(Math.random() * cats.length)];
-
-  // Add it to the page.
   const catPic = document.getElementById("cat-pic");
   catPic.src = cat;
 }
 
+/*
+    Creates a comment based off the inputted Json data.
+    The comment is made using HTML elements.
+*/
 function createCommentElement(comment) {
+  console.log("creating comment");
   const commentElement = document.createElement("div");
   commentElement.className = "comment";
 
@@ -56,13 +58,22 @@ function createCommentElement(comment) {
   usernameElement.innerText = comment[1];
   const messageElement = document.createElement("p");
   messageElement.innerText = comment[3];
+  const imageElement = document.createElement("img");
+  imageElement.src = comment[4];
 
   commentElement.appendChild(titleElement);
   commentElement.appendChild(usernameElement);
   commentElement.appendChild(messageElement);
+  if (comment[4] !== null) {
+    commentElement.appendChild(imageElement);
+  }
   return commentElement;
 }
 
+/*
+  Displays comments on the comments page. Comments are retrieved
+  from /data.
+*/
 function loadComments() {
   const commentElement = document.getElementById("comments-container");
   let maxComments = document.getElementById("max-comments");
@@ -85,6 +96,10 @@ function loadComments() {
       });
     });
 }
+
+/*
+    Fetches a post request.
+*/
 async function postData(url = "", data = {}) {
   // Default options are marked with *
   const response = await fetch(url, {
@@ -98,10 +113,31 @@ async function postData(url = "", data = {}) {
   return response.text(); // parses JSON response into native JavaScript objects
 }
 
+/*
+    Deletes comments from datastore and resets the div that
+    held the comments.
+*/
 function deleteComments() {
   postData("/delete-data", {}).then((comments) => {
     const commentElement = document.getElementById("comments-container");
     commentElement.innerHTML = "";
   });
-  console.log("Data fetching tried lol");
+}
+
+/* 
+    Retrieves the url that links to blobstore
+    and inserts it into the form element's action propoerty
+    in comments.html
+*/
+function fetchBlobstoreUrlAndShowForm() {
+  fetch("/blobstore-upload")
+    .then((response) => {
+      return response.text();
+    })
+    .then((imageUploadUrl) => {
+      const fileUpload = document.getElementById("my-form");
+      fileUpload.action = imageUploadUrl;
+      fileUpload.classList.remove("hidden");
+      loadComments();
+    });
 }
