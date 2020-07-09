@@ -16,13 +16,32 @@
  * Adds a random cat to the page.
  */
 function addCat() {
-  const cats =
-      ['/images/bowl_cat.gif','/images/fidget_cat.gif','/images/fluffy_cat.gif','/images/nail_cat.gif','/images/paw_cat.gif','/images/scarf_cat.jpeg','/images/vacuum_cat.gif','/images/turtle_cat.jpeg','/images/bongo_cat.gif', '/images/cat_nerd.jpeg', '/images/cat_phone.gif','/images/cat_stare.jpg','/images/cool_cat.jpg','/images/crying_cat.jpg','/images/disgust_cat.jpeg','/images/polite_cat.jpg','/images/relaxed_cat.jpg','/images/shark_cat.jpeg','/images/swag_cat.jpg'];
+  const cats = [
+    "/images/bowl_cat.gif",
+    "/images/fidget_cat.gif",
+    "/images/fluffy_cat.gif",
+    "/images/nail_cat.gif",
+    "/images/paw_cat.gif",
+    "/images/scarf_cat.jpeg",
+    "/images/vacuum_cat.gif",
+    "/images/turtle_cat.jpeg",
+    "/images/bongo_cat.gif",
+    "/images/cat_nerd.jpeg",
+    "/images/cat_phone.gif",
+    "/images/cat_stare.jpg",
+    "/images/cool_cat.jpg",
+    "/images/crying_cat.jpg",
+    "/images/disgust_cat.jpeg",
+    "/images/polite_cat.jpg",
+    "/images/relaxed_cat.jpg",
+    "/images/shark_cat.jpeg",
+    "/images/swag_cat.jpg",
+  ];
 
   // Pick a random greeting.
   const cat = cats[Math.floor(Math.random() * cats.length)];
 
   // Add it to the page.
-  const catPic = document.getElementById('cat-pic');
+  const catPic = document.getElementById("cat-pic");
   catPic.src = cat;
 }
