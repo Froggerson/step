@@ -36,6 +36,8 @@ import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
 import com.google.appengine.api.images.ImagesService;
 import com.google.appengine.api.images.ImagesServiceFactory;
 import com.google.appengine.api.images.ServingUrlOptions;
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.List;
@@ -72,6 +74,8 @@ public class DataServlet extends HttpServlet {
       long timestamp = (long) entity.getProperty("timestamp");
       String message = (String) entity.getProperty("message");    
       String image = (String) entity.getProperty("image");
+      String email = (String) entity.getProperty("email");
+
 
       ArrayList<Object> comment= new ArrayList<Object>();
       comment.add(timestamp);
@@ -79,6 +83,7 @@ public class DataServlet extends HttpServlet {
       comment.add(title);
       comment.add(message);
       comment.add(image);
+      comment.add(email);
 
       comments.add(comment);
     }
@@ -100,13 +105,16 @@ public class DataServlet extends HttpServlet {
     long timestamp = System.currentTimeMillis();
     Entity commentEntity = new Entity("Comment");
     String imageUrl = getUploadedFileUrl(request, "image");
-
+    UserService userService = UserServiceFactory.getUserService();
+    String email = userService.getCurrentUser().getEmail();
     
     commentEntity.setProperty("username", request.getParameter("username"));
     commentEntity.setProperty("title", request.getParameter("title"));
     commentEntity.setProperty("message", request.getParameter("message"));
     commentEntity.setProperty("timestamp", timestamp);
     commentEntity.setProperty("image", imageUrl);
+    commentEntity.setProperty("email", email);
+
     response.sendRedirect("/comments.html");
 
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();

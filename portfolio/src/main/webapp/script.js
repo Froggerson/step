@@ -9,7 +9,7 @@
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
+// See the License for the specific language gover ning permissions and
 // limitations under the License.
 
 /**
@@ -56,6 +56,8 @@ function createCommentElement(comment) {
   titleElement.innerText = comment[2];
   const usernameElement = document.createElement("p");
   usernameElement.innerText = comment[1];
+  const emailElement = document.createElement("p");
+  emailElement.innerText = comment[5];
   const messageElement = document.createElement("p");
   messageElement.innerText = comment[3];
   const imageElement = document.createElement("img");
@@ -63,6 +65,7 @@ function createCommentElement(comment) {
 
   commentElement.appendChild(titleElement);
   commentElement.appendChild(usernameElement);
+  commentElement.appendChild(emailElement);
   commentElement.appendChild(messageElement);
   if (comment[4] !== null) {
     commentElement.appendChild(imageElement);
@@ -129,6 +132,24 @@ function deleteComments() {
     and inserts it into the form element's action propoerty
     in comments.html
 */
+function isLoggedIn() {
+  fetch("/login")
+    .then((response) => response.json())
+    .then((loginStatus) => {
+      if (loginStatus[0]) {
+        document.getElementById("my-form").style.display = "block";
+        const loginLink =
+          '<p>Logout <a href="' + loginStatus[1] + '">here</a></p>';
+        document.getElementById("sign-in").innerHTML = loginLink;
+      } else {
+        document.getElementById("my-form").style.display = "none";
+        const loginElement = document.createElement("p");
+        const loginLink =
+          '<p>Login <a href="' + loginStatus[1] + '">here</a></p>';
+        document.getElementById("sign-in").innerHTML = loginLink;
+      }
+    });
+}
 function fetchBlobstoreUrlAndShowForm() {
   fetch("/blobstore-upload")
     .then((response) => {
@@ -138,6 +159,7 @@ function fetchBlobstoreUrlAndShowForm() {
       const fileUpload = document.getElementById("my-form");
       fileUpload.action = imageUploadUrl;
       fileUpload.classList.remove("hidden");
-      loadComments();
+      isLoggedIn();
     });
+  loadComments();
 }
