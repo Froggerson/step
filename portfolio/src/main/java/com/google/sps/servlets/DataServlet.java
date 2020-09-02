@@ -44,21 +44,20 @@ import java.util.List;
 import com.google.gson.Gson;
 
 /** 
-    Servlet that handles comment data.
-    Retrieves data inputted into the form in /comment
-    in order to create a comment.
-    Accesses BlobStore API in order to store images.
-
- */
+  * Servlet that handles comment data.
+  * Retrieves data inputted into the form in /comment
+  * in order to create a comment.
+  * Accesses BlobStore API in order to store images.
+  */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
   private ArrayList<String> comment = new ArrayList<String>();
 
-  /*
-    Retrieves comment data from datastore and converts
-    it into a JSON format. The comments in JSON format
-    is then returned to the function that requested it.
-  */
+  /**
+    * Retrieves comment data from datastore and converts
+    * it into a JSON format. The comments in JSON format
+    * is then returned to the function that requested it.
+    */
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
@@ -84,22 +83,19 @@ public class DataServlet extends HttpServlet {
       comment.add(message);
       comment.add(image);
       comment.add(email);
-
       comments.add(comment);
     }
-
     Gson gson = new Gson();
-
     response.setContentType("application/json;");
     response.getWriter().println(gson.toJson(comments));
   }
  
-  /*
-    Collects the form data from /comment.
-    Stores the data into datastore as a Comment entity.
-    Also calls upon getUploadedFileUrl() in order to get
-    any image url that has been uploaded. 
-  */
+  /**
+    * Collects the form data from /comment.
+    * Stores the data into datastore as a Comment entity.
+    * Also calls upon getUploadedFileUrl() in order to get
+    * any image url that has been uploaded. 
+    */
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     long timestamp = System.currentTimeMillis();
@@ -115,13 +111,9 @@ public class DataServlet extends HttpServlet {
     commentEntity.setProperty("image", imageUrl);
     commentEntity.setProperty("email", email);
 
-    response.sendRedirect("/comments.html");
-
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     datastore.put(commentEntity);
-
     response.sendRedirect("/comments.html");
-
   }
 
   /* 
@@ -132,14 +124,13 @@ public class DataServlet extends HttpServlet {
     String json = gson.toJson(messages);
     System.out.println(json);
     return json;
-
   }
   
-    /*
-        Retrieves an url from BlobStore that would
-        represent the image that a user uploaded.
-    */
-    private String getUploadedFileUrl(HttpServletRequest request, String formInputElementName) {
+    /**
+      * Retrieves an url from BlobStore that would
+      * represent the image that a user uploaded.
+      */
+private String getUploadedFileUrl(HttpServletRequest request, String formInputElementName) {
     BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
     Map<String, List<BlobKey>> blobs = blobstoreService.getUploads(request);
     List<BlobKey> blobKeys = blobs.get("image");

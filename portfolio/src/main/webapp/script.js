@@ -9,7 +9,7 @@
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language gover ning permissions and
+// See the License for the specific language governing permissions and
 // limitations under the License.
 
 /**
@@ -43,12 +43,11 @@ function addCat() {
   catPic.src = cat;
 }
 
-/*
-    Creates a comment based off the inputted Json data.
-    The comment is made using HTML elements.
-*/
+/**
+ * Creates a comment based off the inputted Json data.
+ * The comment is made using HTML elements.
+ */
 function createCommentElement(comment) {
-  console.log("creating comment");
   const commentElement = document.createElement("div");
   commentElement.className = "comment";
 
@@ -73,19 +72,17 @@ function createCommentElement(comment) {
   return commentElement;
 }
 
-/*
-  Displays comments on the comments page. Comments are retrieved
-  from /data.
-*/
+/**
+  * Displays comments on the comments page. Comments are retrieved
+  * from /data.
+  */
 function loadComments() {
   const commentElement = document.getElementById("comments-container");
   let maxComments = document.getElementById("max-comments");
   let maxCommentAmount = 7;
-  console.log(maxComments);
   if (maxComments) {
     maxCommentAmount = maxComments.value;
   }
-  console.log(maxCommentAmount);
   let count = 0;
   commentElement.innerHTML = "";
   fetch("/data")
@@ -100,9 +97,9 @@ function loadComments() {
     });
 }
 
-/*
-    Fetches a post request.
-*/
+/**
+  * Fetches a post request.
+  */
 async function postData(url = "", data = {}) {
   // Default options are marked with *
   const response = await fetch(url, {
@@ -116,10 +113,10 @@ async function postData(url = "", data = {}) {
   return response.text(); // parses JSON response into native JavaScript objects
 }
 
-/*
-    Deletes comments from datastore and resets the div that
-    held the comments.
-*/
+/**
+  * Deletes comments from datastore and resets the div that
+  * held the comments.
+  */
 function deleteComments() {
   postData("/delete-data", {}).then((comments) => {
     const commentElement = document.getElementById("comments-container");
@@ -127,11 +124,10 @@ function deleteComments() {
   });
 }
 
-/* 
-    Retrieves the url that links to blobstore
-    and inserts it into the form element's action propoerty
-    in comments.html
-*/
+/** 
+  * Checks if the user is logged in and renders
+  * a login or logout button depending on the condition
+  */
 function isLoggedIn() {
   fetch("/login")
     .then((response) => response.json())
@@ -150,6 +146,12 @@ function isLoggedIn() {
       }
     });
 }
+
+/** 
+  * Retrieves the url that links to blobstore
+  * and inserts it into the form element's action propoerty
+  * in comments.html
+  */
 function fetchBlobstoreUrlAndShowForm() {
   fetch("/blobstore-upload")
     .then((response) => {

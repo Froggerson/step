@@ -47,8 +47,6 @@ public class LoginServlet extends HttpServlet {
     }
     response.setContentType("application/json;");
     response.getWriter().println(convertJson(loginStatus));
-    //response.sendRedirect("/comments.html");
-
   }
 
   @Override
@@ -80,7 +78,6 @@ public class LoginServlet extends HttpServlet {
     String json = gson.toJson(messages);
     System.out.println(json);
     return json;
-
   }
 }
 

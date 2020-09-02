@@ -25,7 +25,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** */
 @RunWith(JUnit4.class)
 public final class FindMeetingQueryTest {
   private static final Collection<Event> NO_EVENTS = Collections.emptySet();
@@ -258,7 +257,6 @@ public final class FindMeetingQueryTest {
     // Events  : |--A-----| |-----A----|
     // Day     : |---------------------|
     // Options :
-
     Collection<Event> events = Arrays.asList(
         new Event("Event 1", TimeRange.fromStartEnd(TimeRange.START_OF_DAY, TIME_0830AM, false),
             Arrays.asList(PERSON_A)),
@@ -275,7 +273,6 @@ public final class FindMeetingQueryTest {
 
   @Test
   public void optionalAttendeeIsBusyAllDay() {
-
     Collection<Event> events = Arrays.asList(
         new Event("Event 1", TimeRange.fromStartDuration(TIME_0800AM, DURATION_30_MINUTES),
             Arrays.asList(PERSON_A)),
@@ -299,7 +296,6 @@ public final class FindMeetingQueryTest {
 
   @Test
   public void optionalAttendeeIsAvailable() {
-
     Collection<Event> events = Arrays.asList(
         new Event("Event 1", TimeRange.fromStartDuration(TIME_0800AM, DURATION_30_MINUTES),
             Arrays.asList(PERSON_A)),
