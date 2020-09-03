@@ -36,12 +36,4 @@ public class DeleteData extends HttpServlet {
     response.sendRedirect("/comments.html");
 
   }
-  public String convertJson(ArrayList<String> messages) throws IOException {
-    Gson gson = new Gson();
-    String json = gson.toJson(messages);
-    System.out.println(json);
-    return json;
-    //response.setContentType("text/html;");
-    //response.getWriter().println("Hi! I'm Jennifer,");
-  }
 }
