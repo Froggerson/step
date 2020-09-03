@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="margin: 0;">
+    <div id="navbar">
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="index.html">Projects</a></li>
+        <li><a href="index.html">Contact</a></li>
+        <li><a href="/quiz.html">Quiz</a></li>
+        <li><a href="/comments.html">Comments</a></li>
+      </ul>
+    </div>
+    <div id="cat-quiz">
+      <h2><span class="highlight">Cat Quiz</span></h2>
+      <p>
+        This is a quiz to determine whether or not you are a cat. Please select
+        the statements that apply to you. Take this with a grain of salt.
+      </p>
+      <div id="quiz"></div>
+      <button id="submit">Submit Quiz</button>
+    </div>
+    <div id="quiz-results">
+      <div id="results">
+        <h2 style="visibility: hidden;" id="result-header">Your Results:</h2>
+        <p id="score"></p>
+        <p id="score-comment"></p>
+      </div>
+    </div>
+    <script src="/quiz.js"></script>
+  </body>
+</html>
