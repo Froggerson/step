@@ -51,7 +51,7 @@ import com.google.gson.Gson;
   */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
-  private ArrayList<String> comment = new ArrayList<String>();
+  private ArrayList < String > comment = new ArrayList < String > ();
 
   /**
     * Retrieves comment data from datastore and converts
@@ -65,18 +65,17 @@ public class DataServlet extends HttpServlet {
     PreparedQuery results = datastore.prepare(query);
     int count = 0;
 
-    ArrayList<Object> comments = new ArrayList<>();
-    for (Entity entity : results.asIterable()) {
+    ArrayList < Object > comments = new ArrayList < >();
+    for (Entity entity: results.asIterable()) {
       long id = entity.getKey().getId();
       String username = (String) entity.getProperty("username");
       String title = (String) entity.getProperty("title");
       long timestamp = (long) entity.getProperty("timestamp");
-      String message = (String) entity.getProperty("message");    
+      String message = (String) entity.getProperty("message");
       String image = (String) entity.getProperty("image");
       String email = (String) entity.getProperty("email");
 
-
-      ArrayList<Object> comment= new ArrayList<Object>();
+      ArrayList < Object > comment = new ArrayList < Object > ();
       comment.add(timestamp);
       comment.add(username);
       comment.add(title);
@@ -89,7 +88,7 @@ public class DataServlet extends HttpServlet {
     response.setContentType("application/json;");
     response.getWriter().println(gson.toJson(comments));
   }
- 
+
   /**
     * Collects the form data from /comment.
     * Stores the data into datastore as a Comment entity.
@@ -103,7 +102,7 @@ public class DataServlet extends HttpServlet {
     String imageUrl = getUploadedFileUrl(request, "image");
     UserService userService = UserServiceFactory.getUserService();
     String email = userService.getCurrentUser().getEmail();
-    
+
     commentEntity.setProperty("username", request.getParameter("username"));
     commentEntity.setProperty("title", request.getParameter("title"));
     commentEntity.setProperty("message", request.getParameter("message"));
@@ -116,52 +115,42 @@ public class DataServlet extends HttpServlet {
     response.sendRedirect("/comments.html");
   }
 
-  /* 
-    Converts an ArrayList into a Json format
+  /** 
+    * Converts an ArrayList into a Json format
     */
-  public String convertJson(ArrayList<String> messages) throws IOException {
+  public String convertJson(ArrayList < String > messages) throws IOException {
     Gson gson = new Gson();
     String json = gson.toJson(messages);
     System.out.println(json);
     return json;
   }
-  
-    /**
-      * Retrieves an url from BlobStore that would
-      * represent the image that a user uploaded.
-      */
-private String getUploadedFileUrl(HttpServletRequest request, String formInputElementName) {
-    BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
-    Map<String, List<BlobKey>> blobs = blobstoreService.getUploads(request);
-    List<BlobKey> blobKeys = blobs.get("image");
 
-    // User submitted form without selecting a file, so we can't get a URL. (dev server)
+  /**
+    * Retrieves an url from BlobStore that would
+    * represent the image that a user uploaded.
+    */
+  private String getUploadedFileUrl(HttpServletRequest request, String formInputElementName) {
+    BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
+    Map < String,
+    List < BlobKey >> blobs = blobstoreService.getUploads(request);
+    List < BlobKey > blobKeys = blobs.get("image");
+
     if (blobKeys == null || blobKeys.isEmpty()) {
       return null;
     }
-
-    // Our form only contains a single file input, so get the first index.
     BlobKey blobKey = blobKeys.get(0);
-
-    // User submitted form without selecting a file, so we can't get a URL. (live server)
     BlobInfo blobInfo = new BlobInfoFactory().loadBlobInfo(blobKey);
     if (blobInfo.getSize() == 0) {
       blobstoreService.delete(blobKey);
       return null;
     }
 
-    // We could check the validity of the file here, e.g. to make sure it's an image file
-    // https://stackoverflow.com/q/10779564/873165
-
-    // Use ImagesService to get a URL that points to the uploaded file.
     ImagesService imagesService = ImagesServiceFactory.getImagesService();
     ServingUrlOptions options = ServingUrlOptions.Builder.withBlobKey(blobKey);
-
-    // To support running in Google Cloud Shell with AppEngine's devserver, we must use the relative
     try {
       URL url = new URL(imagesService.getServingUrl(options));
       return url.getPath();
-    } catch (MalformedURLException e) {
+    } catch(MalformedURLException e) {
       return imagesService.getServingUrl(options);
     }
   }

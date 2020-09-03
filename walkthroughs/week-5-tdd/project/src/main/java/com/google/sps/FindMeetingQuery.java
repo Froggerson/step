@@ -21,12 +21,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 public final class FindMeetingQuery {
-  public Collection < TimeRange > query(Collection < Event > events, MeetingRequest request) {
-    ArrayList < Event > eventsList = new ArrayList < >(events);
-    ArrayList < TimeRange > times = new ArrayList < TimeRange > ();
+  public Collection <TimeRange > query(Collection <Event> events, MeetingRequest request) {
+    ArrayList <Event > eventsList = new ArrayList <>(events);
+    ArrayList <TimeRange > times = new ArrayList <TimeRange> ();
 
-    HashSet < String > attendees = new HashSet < String > (request.getAttendees());
-    ArrayList < Event > sortedEvents = sortEvents(eventsList, attendees);
+    HashSet <String> attendees = new HashSet <String> (request.getAttendees());
+    ArrayList <Event> sortedEvents = sortEvents(eventsList, attendees);
     int requestDuration = (int) request.getDuration();
     int eventStartTime = 0;
     int index = 0;
@@ -65,13 +65,13 @@ public final class FindMeetingQuery {
   /**
     * Returns list of events that have at least one attendee in it sorted by earliest time.
     */
-  public ArrayList < Event > sortEvents(ArrayList < Event > events, HashSet < String > attendees) {
+  public ArrayList <Event> sortEvents(ArrayList <Event> events, HashSet <String> attendees) {
     sort(events);
     Boolean eventAttended = false;
-    ArrayList < Event > sortedEvents = new ArrayList < >(events);
+    ArrayList <Event> sortedEvents = new ArrayList <>(events);
 
     for (Event event: events) {
-      HashSet < String > eventAttendees = new HashSet < String > (event.getAttendees());
+      HashSet <String> eventAttendees = new HashSet <String> (event.getAttendees());
       eventAttended = false;
       for (String attendee: attendees) {
         if (eventAttendees.contains(attendee)) {
@@ -88,11 +88,10 @@ public final class FindMeetingQuery {
   /**
     * Splits a given ArrayList in half, sorts it, and returns the sorted ArrayList
     */
-  public void merge(ArrayList < Event > events, int left, int middle, int right) {
-    ArrayList < Event > leftEvents = new ArrayList < >(events);
-    ArrayList < Event > righttEvents = new ArrayList < >(events);
+  public void merge(ArrayList <Event> events, int left, int middle, int right) {
+    ArrayList <Event> leftEvents = new ArrayList <>(events);
+    ArrayList <Event> rightEvents = new ArrayList <>(events);
 
-    // Make temporary arrayLists for the left and right
     for (int i = 0; i < events.size(); i++) {
       if (i < middle - left) {
         leftEvents.add(events.get(left + i));
@@ -119,8 +118,8 @@ public final class FindMeetingQuery {
 
   /**
     * Sorts a given ArrayList of event objects.
-   */
-  public void sort(ArrayList < Event > events, int left, int right) {
+    */
+  public void sort(ArrayList <Event> events, int left, int right) {
     if (left < right) {
       int middle = (left + right) / 2;
       sort(events, left, middle);
