@@ -51,9 +51,9 @@ import com.google.gson.Gson;
   */
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
-  private ArrayList < String > comment = new ArrayList < String > ();
+  private ArrayList <String> comment = new ArrayList < String >();
 
-  /**
+   /**
     * Retrieves comment data from datastore and converts
     * it into a JSON format. The comments in JSON format
     * is then returned to the function that requested it.
@@ -65,7 +65,7 @@ public class DataServlet extends HttpServlet {
     PreparedQuery results = datastore.prepare(query);
     int count = 0;
 
-    ArrayList < Object > comments = new ArrayList < >();
+    ArrayList <Object> comments = new ArrayList<>();
     for (Entity entity: results.asIterable()) {
       long id = entity.getKey().getId();
       String username = (String) entity.getProperty("username");
@@ -75,7 +75,7 @@ public class DataServlet extends HttpServlet {
       String image = (String) entity.getProperty("image");
       String email = (String) entity.getProperty("email");
 
-      ArrayList < Object > comment = new ArrayList < Object > ();
+      ArrayList <Object> comment = new ArrayList < Object > ();
       comment.add(timestamp);
       comment.add(username);
       comment.add(title);
@@ -131,9 +131,9 @@ public class DataServlet extends HttpServlet {
     */
   private String getUploadedFileUrl(HttpServletRequest request, String formInputElementName) {
     BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
-    Map < String,
-    List < BlobKey >> blobs = blobstoreService.getUploads(request);
-    List < BlobKey > blobKeys = blobs.get("image");
+    Map <String,
+    List <BlobKey>> blobs = blobstoreService.getUploads(request);
+    List <BlobKey> blobKeys = blobs.get("image");
 
     if (blobKeys == null || blobKeys.isEmpty()) {
       return null;

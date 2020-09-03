@@ -22,8 +22,8 @@ import java.util.Set;
 
 public final class FindMeetingQuery {
   public Collection <TimeRange > query(Collection <Event> events, MeetingRequest request) {
-    ArrayList <Event > eventsList = new ArrayList <>(events);
-    ArrayList <TimeRange > times = new ArrayList <TimeRange> ();
+    ArrayList <Event> eventsList = new ArrayList <>(events);
+    ArrayList <TimeRange> times = new ArrayList <TimeRange> ();
 
     HashSet <String> attendees = new HashSet <String> (request.getAttendees());
     ArrayList <Event> sortedEvents = sortEvents(eventsList, attendees);
