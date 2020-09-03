@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
     <script src="script.js"></script>
   </head>
-  <body style = "margin:0">
+  <body style="margin: 0;">
     <div id="content">
       <div id="navbar">
         <ul>
@@ -20,49 +26,75 @@
           <li><a href="/comments.html">Comments</a></li>
         </ul>
       </div>
-      <div id ="banner">
+      <div id="banner">
         <h1 id="greeting-container">Hi! I'm Jennifer,</h1>
         <h2>A student studying computer science.</h2>
       </div>
       <div id="about">
-          <h2><span class="highlight">About me</span></h2>
-            <div id="about-container">
-                <div id="about-text">
-                    <p>Hey! I'm an upcoming second year student at UC San Diego. My major is computer science, and I'm also planning on minoring in
-                        design as well. In the future I hope to do something related to front-end development, but there is still a ton of things that I don't know about in
-               computer science, and I am ready to try them all!</p>
-                    <p>In my freetime, I enjoy drawing, playing video games, and watching shows with my older sister. I'm always down to get boba with my friends. I don't have many photos of myself, but I do like cats, hence the cat photos from Google Images.
-                    </p>
-                    <button id="cat-button" onclick="addCat()">New Cat</button>
-                </div>
-                <img id="cat-pic" src="/images/relaxed_cat.jpg" alt="cat photo"/>
-            </div>
+        <h2><span class="highlight">About me</span></h2>
+        <div id="about-container">
+          <div id="about-text">
+            <p>
+              Hey! I'm an upcoming second year student at UC San Diego. My major
+              is computer science, and I'm also planning on minoring in design
+              as well. In the future I hope to do something related to front-end
+              development, but there is still a ton of things that I don't know
+              about in computer science, and I am ready to try them all!
+            </p>
+            <p>
+              In my freetime, I enjoy drawing, playing video games, and watching
+              shows with my older sister. I'm always down to get boba with my
+              friends. I don't have many photos of myself, but I do like cats,
+              hence the cat photos from Google Images.
+            </p>
+            <button id="cat-button" onclick="addCat()">New Cat</button>
+          </div>
+          <img id="cat-pic" src="/images/relaxed_cat.jpg" alt="cat photo" />
+        </div>
       </div>
-      <div id='projects'>
-          <h2><span class="highlight">Projects</span></h2>
-          <div id="project-container">
-            <div class="project-card">
-                <h3>Warren College Writing Program Website</h3>
-                <p>I made a website detailing the suborgs available at UCSD that are dedicated to fighting climate change. This was done for my final project for the class.</p>
-            </div>
+      <div id="projects">
+        <h2><span class="highlight">Projects</span></h2>
+        <div id="project-container">
           <div class="project-card">
-            <h3>UCSD Bot</h3>
-            <p>During a summer program at UCSD, my lab partner and I created a reddit bot using Python that would search for certain key terms in a comment and post
-              a fun fact about that key term. It was done for our final project in the program.
+            <h3>Warren College Writing Program Website</h3>
+            <p>
+              I made a website detailing the suborgs available at UCSD that are
+              dedicated to fighting climate change. This was done for my final
+              project for the class.
             </p>
           </div>
-            <div class="project-card">
+          <div class="project-card">
+            <h3>UCSD Bot</h3>
+            <p>
+              During a summer program at UCSD, my lab partner and I created a
+              reddit bot using Python that would search for certain key terms in
+              a comment and post a fun fact about that key term. It was done for
+              our final project in the program.
+            </p>
+          </div>
+          <div class="project-card">
             <h3>More coming soon!</h3>
-            <p>There are still plently more projects to be created. Hang tight until then!</p>
+            <p>
+              There are still plently more projects to be created. Hang tight
+              until then!
+            </p>
           </div>
         </div>
       </div>
       <div id="contact-container">
         <div id="contact">
           <h3>Contact me</h3>
-          <a href="https://github.com/Froggerson" target="_blank"><img width="32" height="32" src="/images/github.png"/></a>
-          <a href="mailto:phamjennifer314@gmail.com" target="_blank"><i class="material-icons md-32">email</i></a>
-          <a href="https://www.linkedin.com/in/jennifer-pham-575ab113b" target="_blank"><img width="32" height="32" src="/images/linkedin.png"/></a>
+          <a href="https://github.com/Froggerson" target="_blank"
+            ><img width="32" height="32" src="/images/github.png"
+          /></a>
+          <a href="mailto:phamjennifer314@gmail.com" target="_blank"
+            ><i class="material-icons md-32">email</i></a
+          >
+          <a
+            href="https://www.linkedin.com/in/jennifer-pham-575ab113b"
+            target="_blank"
+            ><img width="32" height="32" src="/images/linkedin.png"
+          /></a>
         </div>
       </div>
     </div>
