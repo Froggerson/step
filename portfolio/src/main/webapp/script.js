@@ -67,11 +67,9 @@ function loadComments() {
   const commentElement = document.getElementById("comments-container");
   let maxComments = document.getElementById("max-comments");
   let maxCommentAmount = 7;
-  console.log(maxComments);
   if (maxComments) {
     maxCommentAmount = maxComments.value;
   }
-  console.log(maxCommentAmount);
   let count = 0;
   commentElement.innerHTML = "";
   fetch("/data")
@@ -103,5 +101,4 @@ function deleteComments() {
     const commentElement = document.getElementById("comments-container");
     commentElement.innerHTML = "";
   });
-  console.log("Data fetching tried lol");
 }
