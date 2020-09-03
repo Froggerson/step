@@ -1,4 +1,5 @@
-function makeQuiz() {
+function makeQuiz(quizContainer, questions) {
+  let output = [];
   questions.forEach((currentQuestion, questionNumber) => {
     output.push(
       `<input type="checkbox" id="question${questionNumber}" name="question${questionNumber}" 
@@ -11,30 +12,37 @@ function makeQuiz() {
 
 function showResults() {
   let count = 0;
+  const resultHeader = document.getElementById("result-header");
+  resultHeader.style = "visibility:visible;";
   questions.forEach((currentQuestion, questionNumber) => {
     if (document.getElementById(`question${questionNumber}`).checked === true) {
       count++;
     }
   });
-  let resultsCode = `<h2>Your Results:</h2><p>Your score was ${count}</p>`;
+  document.getElementById(
+    "score"
+  ).textContent = `Congratulations! Your score was ${count}.`;
 
   if (count <= 1) {
-    resultsCode += `<p>You are definitely not a cat. </p>`;
+    document.getElementById("score-comment").textContent =
+      "You are definitely not a cat.";
   } else if (count <= 7) {
-    resultsCode += `<p>You are not a cat, but you do have some catlike tendencies.</p>`;
+    document.getElementById("score-comment").textContent =
+      "You are not a cat, but you do have some catlike tendencies.";
   } else if (count <= 10) {
-    resultsCode += `<p>You might be a cat.</p>`;
+    document.getElementById("score-comment").textContent =
+      "You might be a cat or some other animal.";
   } else {
-    resultsCode += `<p>You are a cat.</p>`;
+    document.getElementById("score-comment").textContent =
+      "Meow. You are a cat.";
   }
-  resultsContainer.innerHTML = resultsCode;
-  window.scrollBy(000, 400);
+  const resultsDiv = document.getElementById("results");
+  resultsDiv.scrollIntoView();
 }
 
 const quizContainer = document.getElementById("quiz");
 const resultsContainer = document.getElementById("results");
 const submitButton = document.getElementById("submit");
-const output = [];
 const questions = [
   "I am quadrupedal.",
   "I have around 230-250 bones",
@@ -52,5 +60,5 @@ const questions = [
   "My heart beats from around 110 to 140 beats a minute.",
 ];
 
-makeQuiz();
+makeQuiz(quizContainer, questions);
 submitButton.addEventListener("click", showResults);

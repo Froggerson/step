@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="script.js"></script>
+  </head>
+  <body style = "margin:0" onload="loadComments()">
+    <div id="content">
+      <div id="navbar">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="/quiz.html">Quiz</a></li>
+          <li><a href="/comments.html">Comments</a></li>
+        </ul>
+      </div>
+      <h1>Comments</h1>
+      <p>Have something to say? Then please add a comment!</p>
+      <div id="comment-form">
+          <form action="/data" method="POST">
+             <label for="username">Name:</label><br>
+             <input type="text" id="username" name="username"><br>
+             <label for="title">Title:</label><br>
+             <input type="text" id="title" name="title"><br>
+             <textarea name="message" style="width:400px; height:600px;">
+                Enter your comment here...
+              </textarea>
+             <input type="submit" value="Submit">
+          </form>
+    </div>
+    </br>
+    <div id="comments-container" >
+    </div>
+    <p> Please select how many comments to display:</p>
+    <input type="number" id="max-comments" name="max-comments" min="5" max="15" value="7" >
+    <button onCLick="loadComments()">Confirm</button>
+    <button onCLick="deleteComments()">Delete all Comments</button>
+    </div>
+    <script src="script.js"></script>
+    
+  </body>
+</html>
