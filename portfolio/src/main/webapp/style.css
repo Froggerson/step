@@ -5,6 +5,10 @@ c2dfe3
 5c6b73
 253237
 */
+html{
+    font-family: 'Montserrat', sans-serif;
+    font-size:18px;
+}
 #content {
   width: 100%;
 }
@@ -12,6 +16,7 @@ html {
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
 }
+
 h2 {
   font-family: "Nunito", sans-serif;
   color: #555b6e;

@@ -9,6 +9,7 @@ function makeQuiz(quizContainer, questions) {
   });
   quizContainer.innerHTML = output.join("");
 }
+
 function showResults() {
   let count = 0;
   const resultHeader = document.getElementById("result-header");
